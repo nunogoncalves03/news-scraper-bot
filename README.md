@@ -1,2 +1,2 @@
-# news-scraper
-News Scraper
+# news-scraper-bot
+News Scraper Bot
