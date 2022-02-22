@@ -205,6 +205,32 @@ def find_fertagus_news():
     return []
 
 
+def find_website_news():
+  try:
+    html_text = requests.get('https://nunogoncalves03.github.io/news-scraper-bot/').text
+    soup = BeautifulSoup(html_text, 'lxml')
+    posts = soup.find_all('h2', class_='titulo')
+    additional_news = []
+    for post in posts:
+        post_title = post.text.strip()
+        post_ref = post['href']
+        if post_title not in db.keys():
+            print(f'{post_title}\n{post_ref}')
+            print()
+            additional_news += [[post_title, post_ref, 'News Scraper Website', 'https://i.ibb.co/h2s5Kqt/icon.png', 945661162094223370]]
+    if additional_news != []:
+        for news in additional_news:
+            db[news[0]] = ''
+    print('find_website_news() ✅')
+    return additional_news
+  except Exception as error:
+    global error_list
+    if ['find_website_news() ❌', error] not in error_list:
+        error_list = error_list + [['find_website_news() ❌', error]]
+    print('find_website_news() ❌')
+    return []
+
+
 def error_test():
   try:
     html_text = requests.get('https://www.fewfefowpjefifmklewmfkwemfweiofmewiçojwifwiefpio.com/').text
@@ -242,4 +268,4 @@ def reset_error_list():
 
 
 def find_all_news():
-    return find_ml_news_1() + find_ml_news_2() + find_rl_news() + find_c_news() + find_uniarea_news() + find_tst_news() + find_fertagus_news()
+    return find_ml_news_1() + find_ml_news_2() + find_rl_news() + find_c_news() + find_uniarea_news() + find_tst_news() + find_fertagus_news() + find_website_news()
