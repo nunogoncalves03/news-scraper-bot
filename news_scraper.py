@@ -12,7 +12,7 @@ error_list = []
 
 def find_rl_news():
   try:
-    html_text = requests.get('https://www.rodoviariadelisboa.pt/comunicados').text
+    html_text = requests.get('https://www.rodoviariadelisboa.pt/comunicados').content.decode('utf8')
     soup = BeautifulSoup(html_text, 'lxml')
     posts = soup.find_all('a', class_='titulo')
     additional_news = []
@@ -38,7 +38,7 @@ def find_rl_news():
 
 def find_c_news():
   try:
-    html_text = requests.get('https://www.carris.pt/descubra/noticias/informacoes-de-servico/').text
+    html_text = requests.get('https://www.carris.pt/descubra/noticias/informacoes-de-servico/').content.decode('utf8')
     soup = BeautifulSoup(html_text, 'lxml')
     posts = soup.find_all('div', class_='container widget')
     additional_news = []
@@ -67,7 +67,7 @@ def find_c_news():
 def find_ml_news_1():
   try:
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
-    html_text = requests.get('https://www.metrolisboa.pt/informar-3/noticias/', headers=headers).text
+    html_text = requests.get('https://www.metrolisboa.pt/informar-3/noticias/', headers=headers).content.decode('utf8')
     soup = BeautifulSoup(html_text, 'lxml')
     posts = soup.find_all('h2', class_='entry-title')
     additional_news = []
@@ -94,7 +94,7 @@ def find_ml_news_1():
 def find_ml_news_2():
   try:
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
-    html_text = requests.get('https://www.metrolisboa.pt/institucional/comunicar/comunicados/', headers=headers).text
+    html_text = requests.get('https://www.metrolisboa.pt/institucional/comunicar/comunicados/', headers=headers).content.decode('utf8')
     soup = BeautifulSoup(html_text, 'lxml')
     posts = soup.find_all('h2', class_='entry-title')
     additional_news = []
@@ -120,7 +120,7 @@ def find_ml_news_2():
 
 def find_uniarea_news():
   try:
-    html_text = requests.get('https://uniarea.com/category/noticias/').text
+    html_text = requests.get('https://uniarea.com/category/noticias/').content.decode('utf8')
     soup = BeautifulSoup(html_text, 'lxml')
     posts = soup.find_all('h2', class_='title cb-post-title')
     additional_news = []
@@ -146,7 +146,7 @@ def find_uniarea_news():
 
 def find_tst_news():
   try:
-    html_text = requests.get('https://www.tsuldotejo.pt/index.php?page=noticias').text
+    html_text = requests.get('https://www.tsuldotejo.pt/index.php?page=noticias').content.decode('utf8')
     soup = BeautifulSoup(html_text, 'lxml')
     posts = soup.find_all('h2')
     additional_news = []
@@ -207,7 +207,7 @@ def find_fertagus_news():
 
 def error_test():
   try:
-    html_text = requests.get('https://www.fewfefowpjefifmklewmfkwemfweiofmewiçojwifwiefpio.com/').text
+    html_text = requests.get('https://www.fewfefowpjefifmklewmfkwemfweiofmewiçojwifwiefpio.com/').content.decode('utf8')
     soup = BeautifulSoup(html_text, 'lxml')
     posts = soup.find_all('h2')
     additional_news = []
