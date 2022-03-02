@@ -50,7 +50,7 @@ def main():
     @bot.event
     async def on_ready():
         await bot.wait_until_ready()
-        print(f'Logged in as {bot.user}!')
+        print(f'Logged in as {bot.user}! (Test!!)')
         select_role_channel = bot.get_channel(943484725614481430)
         logs_channel = bot.get_channel(922530769883246642)
         await logs_channel.send(f'Logged in as {bot.user}! <:icon:943544386367651850> @everyone')
