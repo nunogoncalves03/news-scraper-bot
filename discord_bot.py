@@ -66,7 +66,7 @@ def main():
         await channel.send(f'Bem-vindo ao servidor, {member.mention}! Vai ao <#943484725614481430> para escolheres os sites que pretendes receber notícias. <:icon:943544386367651850>')
     
     
-    @tasks.loop(seconds = 3600)
+    @tasks.loop(seconds = 5400)
     async def find_news():
         logs_channel = bot.get_channel(922530769883246642)
         await logs_channel.send(f'Searching for news... <:icon:943544386367651850>')
