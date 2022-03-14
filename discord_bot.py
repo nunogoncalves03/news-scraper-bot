@@ -86,11 +86,12 @@ def main():
         await logs_channel.send('Last message: **' + db['last_message'] + '**')
         print('Last message:', db['last_message'])
     
-    
+"""  
     @bot.event
     async def on_message(message):
         if message.channel.type == discord.ChannelType.news:
             await message.publish()
+"""
     
     
     keep_alive()
