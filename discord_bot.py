@@ -37,7 +37,7 @@ def main():
             interaction = await bot.wait_for('select_option', check=lambda inter: inter.custom_id == 'SelectRole')
             values = interaction.values
             author = interaction.author
-            await author.edit(roles=[])
+            await author.edit(roles=['trISTes'])
             for value in values:
                 role = get(author.guild.roles, name=value)
                 await author.add_roles(role)
