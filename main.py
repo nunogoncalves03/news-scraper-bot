@@ -12,4 +12,3 @@ try:
 except:
     print('news_scraper.py/discord_bot.py ❌')
 
-os.system('python redirect_to_main.py')
