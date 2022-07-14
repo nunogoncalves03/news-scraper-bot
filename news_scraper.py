@@ -242,4 +242,4 @@ def reset_error_list():
 
 
 def find_all_news():
-    return find_ml_news_1() + find_ml_news_2() + find_rl_news() + find_c_news() + find_uniarea_news() + find_tst_news() + find_fertagus_news()
+    return find_ml_news_1() + find_ml_news_2() + find_rl_news() + find_uniarea_news() + find_tst_news() + find_fertagus_news()
